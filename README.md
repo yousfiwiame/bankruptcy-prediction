@@ -143,7 +143,7 @@ The project employs two different sequence lengths:
 - 5-year sequences provided better predictive power than 2-year sequences
 - Traditional ML models performed well with proper preprocessing
 
-## Explainability Analysis
+## Explainability Analysis (still working on it)
 
 The project integrates SHAP (SHapley Additive exPlanations) to interpret model decisions:
 
