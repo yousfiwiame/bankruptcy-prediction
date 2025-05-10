@@ -159,6 +159,7 @@ The project integrates SHAP (SHapley Additive exPlanations) to interpret model d
 
 <pre lang="markdown"> ```python # Machine Learning Models from sklearn.ensemble import RandomForestClassifier from sklearn.preprocessing import StandardScaler from imblearn.pipeline import Pipeline as ImbPipeline from imblearn.over_sampling import SMOTE # Create ML pipeline pipeline = ImbPipeline(steps=[ ("scaler", StandardScaler()), ("smote", SMOTE(random_state=42)), ("model", RandomForestClassifier()) ]) # Fit model pipeline.fit(X_train, y_train) # Deep Learning Models from tensorflow.keras.models import Sequential from tensorflow.keras.layers import LSTM, Dense, Dropout, Bidirectional # Create BiLSTM model bilstm_model = Sequential([ Bidirectional(LSTM(64, return_sequences=True), input_shape=(seq_len, n_features)), Dropout(0.3), Bidirectional(LSTM(32)), Dropout(0.3), Dense(32, activation='relu'), Dropout(0.3), Dense(1, activation='sigmoid') ]) # Compile model bilstm_model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']) # Train model history = bilstm_model.fit( X_train, y_train, epochs=70, batch_size=64, validation_split=0.2, class_weight=class_weights, callbacks=[early_stop, lr_reduce] ) ``` </pre>
 
+```
 
 ## Requirements
 
